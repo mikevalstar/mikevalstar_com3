@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mike Valstar - {{title}}</title>
+
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <div id="hleft"></div>
+        <div id="hc">
+            <h1>M</h1>
+        </div>
+        <div id="hright"></div>
+    </div>
+    <div id="content">

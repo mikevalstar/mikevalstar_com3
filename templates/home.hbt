@@ -1,0 +1,12 @@
+{{> header}}
+
+<div id="home">
+
+    <h2>{{title}}</h2>
+    <article>
+        {{{contents}}}
+    </article>
+
+</div>
+
+{{> footer}}
