@@ -26,6 +26,7 @@
     "gulp-watch": "^4.1.1",
     "gulpsmith": "^0.5.3",
     "lodash": "^3.5.0",
-    "run-sequence": "^1.0.2"
+    "run-sequence": "^1.0.2",
+    "gulp-s3-upload": "~1.0.2"
   }
 }

@@ -1,6 +1,7 @@
 ---
 title: About
+link: about
 template: page.hbt
 ---
 
-This is the about page
+Unfortunatly I have not had time to fill out much about me just yet. Coming soon...

@@ -22,6 +22,9 @@ var gulpsmith = require('gulpsmith'),
 // Handlebars
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.hbt').toString());
 Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/partials/footer.hbt').toString());
+Handlebars.registerHelper("log", function(something) {
+  console.log(something);
+});
 
 // Gulp tasks
 gulp.task('default', function (cb) {
@@ -65,13 +68,13 @@ gulp.task('metalsmith', function() {
                     },
                     post: {
                         pattern: 'posts/*.md',
-                        sortBy: 'date',
+                        sortBy: 'datetime',
                         reverse: true
                     }
                 }))
                 .use(markdown())
                 .use(templates('handlebars'))
-                .use(permalinks(':collection/:title'))
+                .use(permalinks(':collection/:link'))
         ).pipe(gulp.dest("./build"))
         .pipe(connect.reload());
 });

@@ -13,11 +13,11 @@
 </head>
 <body>
 <div id="container">
-    <div id="header">
+    <header id="header">
         <div id="hleft"></div>
         <div id="hc">
             <h1>M</h1>
         </div>
         <div id="hright"></div>
-    </div>
+    </header>
     <div id="content">
