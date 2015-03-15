@@ -1,6 +1,6 @@
 ---
-title: Home
-template: home.hbt
+title: About
+template: page.hbt
 ---
 
-An informative article.
+This is the about page
