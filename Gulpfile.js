@@ -30,11 +30,14 @@ gulp.task('default', function (cb) {
 
 gulp.task('deploy', ['default'], function () {
     var s3Deploy = s3(require('./.s3.json'));
-    gulp.src("./build/**/*")
-        .pipe(s3Deploy({
-            Bucket: 'mikevalstar.com',
-            ACL: 'public-read'
-        }));
+
+    setTimeout(function(){
+        gulp.src("./build/**/*")
+            .pipe(s3Deploy({
+                Bucket: 'mikevalstar.com',
+                ACL: 'public-read'
+            }));
+    }, 1000); // timeout to let metalsmith complete
 });
 
 gulp.task('watch', ['connect'], function() {
