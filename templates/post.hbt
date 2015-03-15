@@ -1,0 +1,17 @@
+{{> header}}
+
+<div id="post">
+
+    <h1>{{{title}}}</h1>
+    <article>
+        {{{contents}}}
+        
+        <p>
+            <span class="author">By <a rel="author" href="mailto:{{{this.author.email}}}">{{{this.author.name}}}</a></span> 
+            on <time pubdate datetime="{{{this.datetime}}}">{{{this.datetime}}}</time>
+        </p>
+    </article>
+
+</div>
+
+{{> footer}}

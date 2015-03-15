@@ -2,9 +2,14 @@
 
 <div id="home">
 
-    <article>
-        {{{contents}}}
-    </article>
+    {{#each collections.post}}
+    <div class="post_short">
+        <h1><a href="/post/{{{this.link}}}">{{this.title}}</a></h1>
+        <article>
+            {{{this.short}}}
+        </article>
+    </div>
+    {{/each}}
 
 </div>
 
