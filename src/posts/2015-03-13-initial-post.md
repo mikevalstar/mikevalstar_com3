@@ -7,10 +7,10 @@ author:
     name: Mike Valstar
     email: mikevalstar@gmail.com
 short: >
-    I've gotten in the habbit of re-working my website every year or so due to it 
+    <p>I've gotten in the habbit of re-working my website every year or so due to it 
     not having one or more features. The features I want to show are generally to highlight
     both my skill as a web developer and to make the website robust enough to write 
-    any type of page/tutorial/video/other. 
+    any type of page/tutorial/video/other.</p>
 ---
 
 I've gotten in the habbit of re-working my website every year or so due to it 
