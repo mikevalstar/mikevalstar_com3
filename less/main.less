@@ -1,71 +1,57 @@
-html{
-}
+// Bootstrap
+// Core variables and mixins
+@import "variables-bs.less";
+@import "../node_modules/bootstrap/less/mixins.less";
 
-body{
-    background: linear-gradient(to right, #4ca8c4 0%,#3cd3cd 100%);
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', Arial, Helvetica, Geneva, sans-serif;
-    font-size: 1.1em;
-}
+// Reset and dependencies
+@import "../node_modules/bootstrap/less/normalize.less";
+@import "../node_modules/bootstrap/less/print.less";
+//@import "../node_modules/bootstrap/less/glyphicons.less";
 
-#container{
-    margin: 16px;
-    min-height: 95vh;
-}
+// Core CSS
+@import "../node_modules/bootstrap/less/scaffolding.less";
+@import "../node_modules/bootstrap/less/type.less";
+//@import "../node_modules/bootstrap/less/code.less";
+@import "../node_modules/bootstrap/less/grid.less";
+/*@import "../node_modules/bootstrap/less/tables.less";
+@import "../node_modules/bootstrap/less/forms.less";
+@import "../node_modules/bootstrap/less/buttons.less";
 
-#header{
-    display: -webkit-box;
-    display: flexbox;
 
-    #hleft, #hright{
-        -webkit-box-flex: 1;
-        -webkit-flex: 1;
-        flex: 1;
-    }
+// Components
+@import "../node_modules/bootstrap/less/component-animations.less";
+@import "../node_modules/bootstrap/less/dropdowns.less";
+@import "../node_modules/bootstrap/less/button-groups.less";
+@import "../node_modules/bootstrap/less/input-groups.less";
+@import "../node_modules/bootstrap/less/navs.less";
+@import "../node_modules/bootstrap/less/navbar.less";
+@import "../node_modules/bootstrap/less/breadcrumbs.less";
+@import "../node_modules/bootstrap/less/pagination.less";
+@import "../node_modules/bootstrap/less/pager.less";
+@import "../node_modules/bootstrap/less/labels.less";
+@import "../node_modules/bootstrap/less/badges.less";
+@import "../node_modules/bootstrap/less/jumbotron.less";
+@import "../node_modules/bootstrap/less/thumbnails.less";
+@import "../node_modules/bootstrap/less/alerts.less";
+@import "../node_modules/bootstrap/less/progress-bars.less";
+@import "../node_modules/bootstrap/less/media.less";
+@import "../node_modules/bootstrap/less/list-group.less";
+@import "../node_modules/bootstrap/less/panels.less";
+@import "../node_modules/bootstrap/less/responsive-embed.less";
+@import "../node_modules/bootstrap/less/wells.less";
+@import "../node_modules/bootstrap/less/close.less";
 
-    h1{
-        color: white;
-        font-size: 3.5em;
-        margin: 30px 0;
-        text-shadow: 2px 2px rgba(0,0,0,0.3);
-    }
-}
+// Components w/ JavaScript
+@import "../node_modules/bootstrap/less/modals.less";
+@import "../node_modules/bootstrap/less/tooltip.less";
+@import "../node_modules/bootstrap/less/popovers.less";
+@import "../node_modules/bootstrap/less/carousel.less";
 
-#hleft, #hright{
-    background: white;
-}
+// Utility classes
+@import "../node_modules/bootstrap/less/utilities.less";
+@import "../node_modules/bootstrap/less/responsive-utilities.less";*/
 
-#hc{
-    width: 130px;
-    text-align: center;
-}
-
-#content{
-    background: white;
-    padding: 20px 0;
-    min-height: 80vh;
-}
-
-h1{
-    text-align: center;
-    font-size: 2.8em;
-    margin: 0;
-}
-
-h2{
-    font-size: 1.8em;
-}
-
-h1, h2, h3{
-    color: #444;
-    font-weight: 200;
-}
-
-p{
-    color: #555;
-    line-height: 1.8em;
-}
+@import "site.less";
 
 @import "pages/home.less";
 @import "pages/post.less";

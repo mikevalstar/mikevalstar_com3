@@ -8,7 +8,8 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     runSequence = require('run-sequence'),
     s3 = require('gulp-s3-upload'),
-    path = require('path');
+    path = require('path'),
+    moment = require('moment');
 
 // Metalsmith related
 var gulpsmith = require('gulpsmith'),
@@ -23,7 +24,11 @@ var gulpsmith = require('gulpsmith'),
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.hbt').toString());
 Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/partials/footer.hbt').toString());
 Handlebars.registerHelper("log", function(something) {
-  console.log(something);
+    console.log(something);
+});
+Handlebars.registerHelper("momentFormat", function(dt, format) {
+    if (!dt) dt = new Date();
+    return moment(dt).format(format);
 });
 
 // Gulp tasks
@@ -82,6 +87,7 @@ gulp.task('metalsmith', function() {
 gulp.task('less', function () {
     return gulp.src('./less/*.less')
         .pipe(less({
+            compress: true,
             paths: [path.join(__dirname, 'less', 'includes')]
         }))
         .pipe(autoprefixer(
