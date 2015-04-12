@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Mikevalstar.com Blog</title>
@@ -14,7 +15,7 @@
             <title>{{this.title}}</title>
             <link>http://mikevalstar.com/post/{{{this.link}}}</link>
             <pubDate>{{momentFormat this.datetime 'ddd, DD MMM YYYY HH:mm:ss ZZ'}}</pubDate>
-            <author>Mike Valstar</author>
+            <author>{{this.author.name}}</author>
             <guid>http://mikevalstar.com/post/{{{this.link}}}</guid>
             <description>{{this.short}}</description>
         </item>

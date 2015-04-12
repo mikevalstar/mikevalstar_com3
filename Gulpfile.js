@@ -33,7 +33,7 @@ Handlebars.registerHelper("momentFormat", function(dt, format) {
 
 // Gulp tasks
 gulp.task('default', function (cb) {
-    runSequence('clean', ['metalsmith', 'less'], cb);
+    runSequence('clean', ['copy:fonts', 'metalsmith', 'less'], cb);
 });
 
 gulp.task('deploy', ['default'], function () {
@@ -48,7 +48,7 @@ gulp.task('deploy', ['default'], function () {
     }, 1000); // timeout to let metalsmith complete
 });
 
-gulp.task('watch', ['connect'], function() {
+gulp.task('watch', ['default', 'connect'], function() {
     gulp.watch(['./src/**/*', './templates/**/*'], ['metalsmith']);
     gulp.watch('./less/**/*', ['less']);
 });
@@ -78,8 +78,8 @@ gulp.task('metalsmith', function() {
                     }
                 }))
                 .use(markdown())
-                .use(templates('handlebars'))
                 .use(permalinks(':collection/:link'))
+                .use(templates('handlebars'))
         ).pipe(gulp.dest("./build"))
         .pipe(connect.reload());
 });
@@ -108,6 +108,11 @@ gulp.task('less', function () {
         ))
         .pipe(gulp.dest('./build/css'))
         .pipe(connect.reload());
+});
+
+gulp.task('copy:fonts', function () {
+    return gulp.src('./node_modules/font-awesome/fonts/*')
+        .pipe(gulp.dest('./build/fonts'));
 });
 
 gulp.task('clean', function() {

@@ -1,17 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head lang="en">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mike Valstar - {{title}}</title>
+    
+    {{#if this.meta}}
+    
+    {{#if this.meta.description}}<meta name="description" content="{{this.meta.description}}">{{/if}}
+    {{#if this.meta.shorturl}}<link rel="shorturl" href="{{this.meta.shorturl}}">{{/if}}
+    
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="{{title}}">
+    {{#if this.meta.description}}<meta itemprop="description" content="{{this.meta.description}}">{{/if}}
+    {{#if this.meta.image}}<meta itemprop="image" content="{{this.meta.image}}">{{/if}}
+    
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    {{#if this.meta.twitterhandle}}<meta name="twitter:site" content="@mikevalstar">{{/if}}
+    <meta name="twitter:title" content="{{title}}">
+    {{#if this.meta.description}}<meta name="twitter:description" content="{{this.meta.description}}">{{/if}}
+    {{#if this.meta.twitterhandle}}<meta name="twitter:creator" content="{{this.meta.twitterhandle}}">{{/if}}
+    {{#if this.meta.image}}<meta name="twitter:image" content="{{this.meta.image}}">{{/if}}
 
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://mikevalstar.com/{{this.path}}/" />
+    {{#if this.meta.description}}<meta property="og:description" content="{{this.meta.description}}" />{{/if}}
+    <meta property="og:site_name" content="Mike Valstar Blog" />
+    {{#if this.meta.image}}<meta property="og:image" content="{{this.meta.image}}" />{{/if}}
+    {{/if}}
+
+    <!-- RSS -->
     <link rel="alternate" type="application/rss+xml" title="Mike Valstar Blog RSS" href="http://mikevalstar.com/rss.xml" />
 
+    <!-- CSS -->
     <link rel="stylesheet" href="/css/main.css" />
-
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
 
-    <meta name="viewport" content="width=device-width">
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    <!--- Fav icons -->
+    <link rel="icon" href="/img/apple_logo_512.png" sizes="256x256" type="image/png">
+    <link rel="shortcut icon", href="/img/favicon.png" />
+    <link rel="apple-touch-icon" href="/img/apple_logo_512.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/apple_logo_57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/apple_logo_72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/apple_logo_114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/apple_logo_144.png" />
+    <link rel="apple-touch-icon" sizes="256x256" href="/img/apple_logo_256.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/img/apple_logo_512.png" />
 </head>
 <body>
 <div id="container">
