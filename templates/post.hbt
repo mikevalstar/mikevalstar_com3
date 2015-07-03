@@ -1,19 +1,23 @@
 {{> header}}
 
-<div id="post">
+<div class="container">
+    <div class="row">
+        <div id="post" class="col-xs-12">
 
-    <h1>{{{title}}}</h1>
-    <article>
-        {{{contents}}}
-        
-        <section id="post-author" class="thin">
-        <p>
-            <span class="author">By <a rel="author" href="mailto:{{{this.author.email}}}">{{{this.author.name}}}</a></span> 
-            on <time pubdate datetime="{{{this.datetime}}}">{{momentFormat this.datetime 'LLL'}}</time>
-        </p>
-        </section>
-    </article>
+            <h2>{{{title}}}</h2>
+            <article>
+                {{{contents}}}
 
+                <section id="post-author" class="thin">
+                <p>
+                    <span class="author">By <a rel="author" href="mailto:{{{this.author.email}}}">{{{this.author.name}}}</a></span>
+                    on <time pubdate datetime="{{{this.datetime}}}">{{momentFormat this.datetime 'LLL'}}</time>
+                </p>
+                </section>
+            </article>
+
+        </div>
+    </div>
 </div>
 
 {{> footer}}

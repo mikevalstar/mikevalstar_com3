@@ -1,16 +1,23 @@
 {{> header}}
 
-<div id="home">
+<div class="container">
+    <div class="row">
+        <div id="home" class="col-xs-12">
 
-    {{#each collections.post}}
-    <div class="post_short">
-        <h1><a href="/post/{{{this.link}}}">{{this.title}}</a></h1>
-        <article>
-            {{{this.short}}}
-        </article>
+            {{#each collections.post}}
+            <div class="post_short">
+                <h2><a href="/post/{{{this.link}}}">{{this.title}}</a></h2>
+                <div class="meta">
+                    <time pubdate datetime="{{{this.datetime}}}">{{momentFormat this.datetime 'MMM D YYYY'}}</time> - <span class="author"><a rel="author" href="mailto:{{{this.author.email}}}">{{{this.author.name}}}</a></span>
+                </div>
+                <article>
+                    {{{this.short}}}
+                </article>
+            </div>
+            {{/each}}
+
+        </div>
     </div>
-    {{/each}}
-
 </div>
 
 {{> footer}}

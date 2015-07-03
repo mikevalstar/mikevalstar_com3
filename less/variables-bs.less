@@ -28,7 +28,7 @@
 //** Background color for `<body>`.
 @body-bg:               #fff;
 //** Global text color on `<body>`.
-@text-color:            @gray;
+@text-color:            @gray-dark;
 
 //** Global textual link color.
 @link-color:            @brand-primary;
@@ -42,17 +42,17 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  'Open Sans', Arial, Helvetica, Geneva, sans-serif;
+@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
 
-@font-size-base:          16px;
-@font-size-large:         ceil((@font-size-base * 1.50)); // ~18px
+@font-size-base:          14px;
+@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
-@font-size-h1:            floor((@font-size-base * 3)); // ~36px
+@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
 @font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
 @font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
 @font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
@@ -67,7 +67,7 @@
 //** By default, this inherits from the `<body>`.
 @headings-font-family:    inherit;
 @headings-font-weight:    500;
-@headings-line-height:    1.2;
+@headings-line-height:    1.1;
 @headings-color:          inherit;
 
 
@@ -170,6 +170,11 @@
 
 @btn-link-disabled-color:        @gray-light;
 
+// Allows for customizing button radius independently from global border radius
+@btn-border-radius-base:         @border-radius-base;
+@btn-border-radius-large:        @border-radius-large;
+@btn-border-radius-small:        @border-radius-small;
+
 
 //== Forms
 //
@@ -206,6 +211,9 @@
 @input-height-large:             (ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
 //** Small `.form-control` height
 @input-height-small:             (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
+
+//** `.form-group` margin
+@form-group-margin-bottom:       15px;
 
 @legend-color:                   @gray-dark;
 @legend-border-color:            #e5e5e5;
@@ -266,7 +274,8 @@
 @zindex-popover:           1060;
 @zindex-tooltip:           1070;
 @zindex-navbar-fixed:      1030;
-@zindex-modal:             1040;
+@zindex-modal-background:  1040;
+@zindex-modal:             1050;
 
 
 //== Media queries breakpoints
@@ -315,7 +324,7 @@
 //** Number of columns in the grid.
 @grid-columns:              12;
 //** Padding between columns. Gets divided in half for the left and right.
-@grid-gutter-width:         30px;
+@grid-gutter-width:         20px;
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
 @grid-float-breakpoint:     @screen-sm-min;
@@ -333,12 +342,12 @@
 @container-sm:                 @container-tablet;
 
 // Medium screen / desktop
-@container-desktop:            (940px + @grid-gutter-width);
+@container-desktop:            (740px + @grid-gutter-width);
 //** For `@screen-md-min` and up.
 @container-md:                 @container-desktop;
 
 // Large screen / wide desktop
-@container-large-desktop:      (1140px + @grid-gutter-width);
+@container-large-desktop:      (840px + @grid-gutter-width);
 //** For `@screen-lg-min` and up.
 @container-lg:                 @container-large-desktop;
 
@@ -379,7 +388,7 @@
 @navbar-default-toggle-border-color:       #ddd;
 
 
-// Inverted navbar
+//=== Inverted navbar
 // Reset inverted navbar basics
 @navbar-inverse-color:                      lighten(@gray-light, 15%);
 @navbar-inverse-bg:                         #222;
@@ -480,6 +489,7 @@
 @jumbotron-bg:                   @gray-lighter;
 @jumbotron-heading-color:        inherit;
 @jumbotron-font-size:            ceil((@font-size-base * 1.5));
+@jumbotron-heading-font-size:    ceil((@font-size-base * 4.5));
 
 
 //== Form states and alerts

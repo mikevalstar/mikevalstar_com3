@@ -6,17 +6,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mike Valstar - {{title}}</title>
-    
+
     {{#if this.meta}}
-    
+
     {{#if this.meta.description}}<meta name="description" content="{{this.meta.description}}">{{/if}}
     {{#if this.meta.shorturl}}<link rel="shorturl" href="{{this.meta.shorturl}}">{{/if}}
-    
+
     <!-- Schema.org markup for Google+ -->
     <meta itemprop="name" content="{{title}}">
     {{#if this.meta.description}}<meta itemprop="description" content="{{this.meta.description}}">{{/if}}
     {{#if this.meta.image}}<meta itemprop="image" content="{{this.meta.image}}">{{/if}}
-    
+
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary">
     {{#if this.meta.twitterhandle}}<meta name="twitter:site" content="@mikevalstar">{{/if}}
@@ -43,7 +43,7 @@
 
     <!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    
+
     <!--- Fav icons -->
     <link rel="icon" href="/img/apple_logo_512.png" sizes="256x256" type="image/png">
     <link rel="shortcut icon", href="/img/favicon.png" />
@@ -56,12 +56,15 @@
     <link rel="apple-touch-icon" sizes="512x512" href="/img/apple_logo_512.png" />
 </head>
 <body>
-<div id="container">
-    <header id="header">
-        <div id="hleft"></div>
-        <div id="hc">
-            <h1><a href="/">M</a></h1>
+
+<header id="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1><a href="/">Mike Valstar - A Blog</a></h1>
+            </div>
         </div>
-        <div id="hright"></div>
-    </header>
-    <div id="content">
+    </div>
+</header>
+
+<div id="content">

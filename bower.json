@@ -1,0 +1,23 @@
+{
+  "name": "mikevalstar_com3",
+  "main": "index.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/mikevalstar/mikevalstar_com3",
+  "authors": [
+    "Mike Valstar <mvalstar@konradgroup.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.3.0",
+    "jquery": "~2.1.4"
+  }
+}

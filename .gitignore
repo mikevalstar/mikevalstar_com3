@@ -5,5 +5,8 @@ npm-debug.log
 # secret files
 .s3.json
 
+# Bower
+assets/components
+
 # Compiled
 build
