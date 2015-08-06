@@ -9,12 +9,12 @@
     "colors": "^1.0.3",
     "handlebars": "^3.0.0",
     "markdown": "^0.5.0",
-    "metalsmith": "^1.3.0",
+    "metalsmith": "^2.0.1",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-permalinks": "^0.4.0",
-    "metalsmith-templates": "^0.6.1",
-    "moment": "~2.9.0",
+    "metalsmith-templates": "^0.7.0",
+    "moment": "~2.10.6"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
@@ -28,6 +28,6 @@
     "gulpsmith": "^0.5.3",
     "lodash": "^3.5.0",
     "run-sequence": "^1.0.2",
-    "gulp-s3-upload": "~1.0.2"
+    "gulp-s3-upload": "~1.0.5"
   }
 }

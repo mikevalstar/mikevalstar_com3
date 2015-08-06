@@ -6,6 +6,7 @@
 
             <h2>{{{title}}}</h2>
             <article>
+
                 {{{contents}}}
 
                 <section id="post-author" class="thin">
