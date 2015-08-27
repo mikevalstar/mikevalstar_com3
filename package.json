@@ -7,6 +7,9 @@
   "license": "BSD",
   "dependencies": {
     "colors": "^1.0.3",
+    "gulp-sass": "^2.0.4",
+    "gulp-scss": "^1.2.0",
+    "gulp-size": "^2.0.0",
     "handlebars": "^3.0.0",
     "markdown": "^0.5.0",
     "metalsmith": "^2.0.1",

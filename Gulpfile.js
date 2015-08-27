@@ -4,11 +4,11 @@ var gulp = require( "gulp" ),
     assign = require( "lodash" ).assign,
     clean = require( "gulp-clean" ),
     connect = require( "gulp-connect" ),
-    less = require( "gulp-less" ),
+    scss = require( "gulp-sass" ),
     autoprefixer = require( "gulp-autoprefixer" ),
     runSequence = require( "run-sequence" ),
     s3 = require( "gulp-s3-upload" ),
-    path = require( "path" ),
+    size = require( "gulp-size" ),
     moment = require( "moment" );
 
 // Metalsmith related
@@ -42,7 +42,7 @@ Handlebars.registerHelper( "momentFormat", function( dt, format ) {
 
 // Gulp tasks
 gulp.task( "default", function( cb ) {
-    runSequence( "clean", [ "copy:fonts", "metalsmith", "less" ], cb );
+    runSequence( "clean", [ "copy:fonts", "metalsmith", "scss" ], cb );
 } );
 
 gulp.task( "deploy", [ "default" ], function() {
@@ -59,7 +59,7 @@ gulp.task( "deploy", [ "default" ], function() {
 
 gulp.task( "watch", [ "default", "connect" ], function() {
     gulp.watch( [ "./src/**/*", "./templates/**/*" ], [ "metalsmith" ] );
-    gulp.watch( "./less/**/*", [ "less" ] );
+    gulp.watch( "./scss/**/*", [ "scss" ] );
 } );
 
 gulp.task( "connect", function() {
@@ -89,16 +89,15 @@ gulp.task( "metalsmith", function() {
                 .use( markdown() )
                 .use( permalinks( ":collection/:link" ) )
                 .use( templates( "handlebars" ) )
-        ).pipe( gulp.dest( "./build" ) )
+        )
+        .pipe( size() )
+        .pipe( gulp.dest( "./build" ) )
         .pipe( connect.reload() );
 } );
 
-gulp.task( "less", function() {
-    return gulp.src( "./less/*.less" )
-        .pipe( less( {
-            compress: true,
-            paths: [ path.join( __dirname, "less", "includes" ) ]
-        } ) )
+gulp.task( "scss", function() {
+    return gulp.src( "./scss/main2.scss" )
+        .pipe( scss().on( "error", scss.logError ) )
         .pipe( autoprefixer(
             {
                 browsers: [
@@ -115,12 +114,14 @@ gulp.task( "less", function() {
                 cascade: false
             }
         ) )
+        .pipe( size() )
         .pipe( gulp.dest( "./build/css" ) )
         .pipe( connect.reload() );
 } );
 
 gulp.task( "copy:fonts", function() {
     return gulp.src( "./node_modules/font-awesome/fonts/*" )
+        .pipe( size() )
         .pipe( gulp.dest( "./build/fonts" ) );
 } );
 

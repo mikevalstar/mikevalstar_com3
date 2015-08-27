@@ -5,10 +5,10 @@
         font-weight: normal;
 
         a{
-            color: @gray-darker;
+            color: $gray-dark;
 
             &:hover{
-                color: @gray;
+                color: $gray;
                 text-decoration: none;
             }
         }
