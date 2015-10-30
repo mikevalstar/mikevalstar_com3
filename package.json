@@ -7,6 +7,7 @@
   "license": "BSD",
   "dependencies": {
     "colors": "^1.0.3",
+    "eslint": "^1.7.3",
     "gulp-sass": "^2.0.4",
     "gulp-scss": "^1.2.0",
     "gulp-size": "^2.0.0",
@@ -14,10 +15,12 @@
     "markdown": "^0.5.0",
     "metalsmith": "^2.0.1",
     "metalsmith-collections": "^0.7.0",
+    "metalsmith-layouts": "^1.4.0",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-permalinks": "^0.4.0",
     "metalsmith-templates": "^0.7.0",
-    "moment": "~2.10.6"
+    "moment": "~2.10.6",
+    "react": "^0.13.3"
   },
   "devDependencies": {
     "gulp": "^3.8.11",

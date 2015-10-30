@@ -3,8 +3,8 @@ title: CSS and Text
 link: css-and-text
 template: post.hbt
 series:
-datetime: 2015-08-04 10:00:00
-updated: 2015-08-04 10:00:00
+datetime: 2015-08-28 10:00:00
+updated: 2015-08-28 10:00:00
 author:
     name: Mike Valstar
     email: mikevalstar@gmail.com
@@ -109,6 +109,7 @@ Sizing your changes with css is very important in how it display's on a users br
 `px` used to stand for "pixel", but now stands for "point", *not to be confused with pt* due to the rise of high density pixel screens (e.g. retina displays). `px` is also the default go-to sizing for most developers as it's the only way to get "pixel perfect" designs. However if you use non-whole numbers with your sizing of fonts, or font spacing you will find some fonts become blurry on non-high density screens; this is due to the sub-pixel rendering and antialiasing of the fonts by the browser. Try to avoid px sizing whenever possible.
 
 ### em, rem, ex
+[em, rem](https://j.eremy.net/confused-about-rem-and-em/) and ex are all relative units of measure and when rendered in the browser will use a little bit of a fuzzier math to determine the size of the font, but based on this math the fonts will be smoother. This should be the go-to sizing for all of your fonts as it will allow for better rendering and more flexibility in your designs.  Further it will allow you to "zoom" element 
 
 ### %
 
