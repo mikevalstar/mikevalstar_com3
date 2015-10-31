@@ -4,7 +4,8 @@
 * Frameworks / tools for people who hate coding
 * Do you really need a CMS?
 * Writing user stories (something about making them not overlapping and sub tasks)
-* Ramifications, understanding your site model 
+* Ramifications, understanding your site model
+* Salesforce and Enterprise apps
 
 ## HTML / CSS related
 * Animations

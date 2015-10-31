@@ -109,11 +109,10 @@ Sizing your changes with css is very important in how it display's on a users br
 `px` used to stand for "pixel", but now stands for "point", *not to be confused with pt* due to the rise of high density pixel screens (e.g. retina displays). `px` is also the default go-to sizing for most developers as it's the only way to get "pixel perfect" designs. However if you use non-whole numbers with your sizing of fonts, or font spacing you will find some fonts become blurry on non-high density screens; this is due to the sub-pixel rendering and antialiasing of the fonts by the browser. Try to avoid px sizing whenever possible.
 
 ### em, rem, ex
-[em, rem](https://j.eremy.net/confused-about-rem-and-em/) and ex are all relative units of measure and when rendered in the browser will use a little bit of a fuzzier math to determine the size of the font, but based on this math the fonts will be smoother. This should be the go-to sizing for all of your fonts as it will allow for better rendering and more flexibility in your designs.  Further it will allow you to "zoom" element 
+[em, rem](https://j.eremy.net/confused-about-rem-and-em/) and ex are all relative units of measure and when rendered in the browser will use a little bit of a fuzzier math to determine the size of the font, but based on this math the fonts will be smoother. This should be the go-to sizing for all of your fonts as it will allow for better rendering and more flexibility in your designs.  Further it will allow you to "zoom" element
 
 ### %
-
-### absolute-size, relative-size
+Percentage sizing of text should be avoided whenever possible. there are very few cases where this is beneficial. Test set to percentage size will scale based on the size of the container.
 
 ### pt, cm, mm, in, pc
 These sizings are for print media only and are very non standard for screen rendering. these should be avoided for anything but print stylesheets.
@@ -121,8 +120,15 @@ These sizings are for print media only and are very non standard for screen rend
 ## Fonts
 
 ### font-family
+The [font family](https://developer.mozilla.org/en/docs/Web/CSS/font-family) property is used to determine which fonts are rendered for your text.
+However not every font on your computer can be used on a website; depending on what OS you are using and what applications you have installed on your system will determine what fonts are available on your computer.
+
+There is however a set of "web safe" fonts that can generally be guaranteed to be installed on all computers. [See here](http://www.cssfontstack.com/)
+
+Additionally you can install web fonts from sites like [google fonts](https://www.google.com/fonts). these will work on pretty much any browser these days, however note that some corporate networks will block web fonts so make sure to add a web safe font to the end of your font family definition for those users.
 
 ### font-weight
+font weight determines how bold your font is. The "gotcha" for this is that not all fonts support all font weights, web fonts are notorious for this to reduce the size of the font download you will generally have to make sure to include all font weights you use on your site.
 
 ## Text
 
