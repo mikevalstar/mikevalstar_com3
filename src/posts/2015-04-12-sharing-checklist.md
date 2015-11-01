@@ -1,22 +1,22 @@
 ---
 title: Sharing & SEO Checklist
 link: sharing-seo-checklist
-template: post.hbt
+layout: post.jsx
 series:
-datetime: 2015-04-12 10:00:00
+pubDate: 2015-04-12 10:00:00
 updated: 2015-04-12 10:00:00
-author: 
+author:
     name: Mike Valstar
     email: mikevalstar@gmail.com
-short: >
+excerpt: >
     <p>When creating a website for a client it's always difficult to remember all the items you're going to need. You need images for sharing on social networks, favicons for adding to home screen on iOS devices and browsers, and you need text to describe all sorts of things. Some of these need to be done before you start, some need to be done as you build your pages.</p>
 meta:
     twitterhandle: "@mikevalstar"
-    description: A checklist for for Sharing and SEO on your blog. 
+    description: A checklist for for Sharing and SEO on your blog.
 ---
 
 When creating a website for a client it's always difficult to remember all the items you're going to need.
-You need images for sharing on social networks, favicons for adding to home screen on iOS devices and browsers, 
+You need images for sharing on social networks, favicons for adding to home screen on iOS devices and browsers,
 and you need text to describe all sorts of things. Some of these need to be done before you start, some need to be done as you build your pages.
 
 Here is my checklist:
@@ -68,7 +68,7 @@ For iOS devices you can further describe larger icons for people who may want to
 </div>
 <div id="robots-desc" style="margin-left: 40px;">
 
-Important if you want your site to show up on Google or any other search engine. 
+Important if you want your site to show up on Google or any other search engine.
 
 </div>
 
@@ -131,13 +131,13 @@ For Google+ and Schema.org, 3 items items should be added to your layout to desc
     </label>
 </div>
 <div id="facebook-desc" style="margin-left: 40px;">
-    
+
 Facebook uses "Open Graph" to read information about your site's pages. It has [best practices](https://developers.facebook.com/docs/sharing/best-practices) and you can calidate your settings here: https://developers.facebook.com/tools/debug/
 
 <br/><br/>
 
 <script src="https://gist.github.com/mikevalstar/6b6acd973eb87e3e6708.js"></script>
-    
+
 </div>
 
 
@@ -224,7 +224,7 @@ The web has become increasingly visual over the last few years and it's importan
 </div>
 <div id="author-desc" style="margin-left: 40px;">
 
-Lastly, less important for SEO, but good for the writers of the anything on your site is to show author info. 
+Lastly, less important for SEO, but good for the writers of the anything on your site is to show author info.
 
 </div>
 

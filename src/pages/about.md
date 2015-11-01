@@ -1,7 +1,7 @@
 ---
 title: About
 link: about
-template: page.hbt
+layout: page.jsx
 ---
 
 Unfortunatly I have not had time to fill out much about me just yet. Coming soon...

@@ -1,14 +1,14 @@
 ---
 title: CSS and Text
 link: css-and-text
-template: post.hbt
+layout: post.jsx
 series:
-datetime: 2015-08-28 10:00:00
-updated: 2015-08-28 10:00:00
+pubDate: 2015-10-31 10:00:00
+updated: 2015-10-31 10:00:00
 author:
     name: Mike Valstar
     email: mikevalstar@gmail.com
-short: >
+excerpt: >
     <p>When working with text on a website you have a wide range of CSS techniques to manipulate the text.
     These methods do not always act as you may intend and may hinder the readability of your site.
     What's safe and whats not, what ways can you use to keep your websites readable.</p>
@@ -128,17 +128,31 @@ There is however a set of "web safe" fonts that can generally be guaranteed to b
 Additionally you can install web fonts from sites like [google fonts](https://www.google.com/fonts). these will work on pretty much any browser these days, however note that some corporate networks will block web fonts so make sure to add a web safe font to the end of your font family definition for those users.
 
 ### font-weight
-font weight determines how bold your font is. The "gotcha" for this is that not all fonts support all font weights, web fonts are notorious for this to reduce the size of the font download you will generally have to make sure to include all font weights you use on your site.
+Font weight determines how bold your font is. The "gotcha" for this is that not all fonts support all font weights, web fonts are notorious for this to reduce the size of the font download you will generally have to make sure to include all font weights you use on your site.
 
 ## Text
 
 ### text-indent
+Text indent does what it sounds like and indents text, this is of course only the first line of text.
+When indenting it is best to either use full pixels or relative units to avoid blurry text.
+
 ### letter-spacing, word-spacing
+Letter spacing will allow you to change the spacing between letters and word spacing will let you define the spacing size between words. be sure to use full pixels or relative units to again avoid blurry text.
+
 ### text-decoration
+Underline, overline or line-through. Enough said.
+
 ### text-align
+Left, right or center.
+
 ### line-height
+Line height can be used to set the spacing between lines.
+
 ### text-transform
+Capitalize, uppercase or lowercase. Best practice is to use these when the source text should not be in the format you wish to display (for accessability)
+
 ### vertical-align
+Vertical align is only usable in a table-cell box. You can [read more here](https://developer.mozilla.org/en/docs/Web/CSS/vertical-align).
 
 <script>
 $(function(){

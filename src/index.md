@@ -1,5 +1,5 @@
 ---
 title: Blog Home
-template: home.hbt
+layout: home.jsx
 permalink: false
 ---

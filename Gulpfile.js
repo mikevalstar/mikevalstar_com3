@@ -14,31 +14,11 @@ var moment = require('moment');
 // Metalsmith related
 var gulpsmith = require('gulpsmith');
 var markdown = require('metalsmith-markdown');
-var templates = require('metalsmith-templates');
+var layouts = require('metalsmith-layouts');
 var permalinks = require('metalsmith-permalinks');
 var collections = require('metalsmith-collections');
-var Handlebars = require('handlebars');
+var feed = require('metalsmith-feed');
 var fs = require('fs');
-
-// Handlebars
-Handlebars.registerPartial(
-        'header',
-        fs.readFileSync(__dirname + '/templates/partials/header.hbt').toString()
-    );
-
-Handlebars.registerPartial(
-        'footer',
-        fs.readFileSync(__dirname + '/templates/partials/footer.hbt').toString()
-    );
-
-Handlebars.registerHelper('log', function(something) {
-  console.log(something);
-});
-
-Handlebars.registerHelper('momentFormat', function(dt, format) {
-  if (!dt) { dt = new Date(); }
-  return moment(dt).format(format);
-});
 
 // Gulp tasks
 gulp.task('default', function(cb) {
@@ -82,13 +62,19 @@ gulp.task('metalsmith', function() {
                   },
                   post: {
                     pattern: 'posts/*.md',
-                    sortBy: 'datetime',
+                    sortBy: 'pubDate',
                     reverse: true,
                   }
                 }))
                 .use(markdown())
                 .use(permalinks(':collection/:link'))
-                .use(templates('handlebars'))
+                .use(layouts({engine: 'react', directory: 'templates'}))
+                .metadata({site:{
+                  title: 'Mikevalstar.com Blog',
+                  url: 'http://mikevalstar.com/',
+                  webMaster: 'Mike Valstar',
+                }})
+                .use(feed({collection: 'post'}))
         )
         .pipe(size())
         .pipe(gulp.dest('./build'))
