@@ -6,6 +6,7 @@
 * Writing user stories (something about making them not overlapping and sub tasks)
 * Ramifications, understanding your site model
 * Salesforce and Enterprise apps
+* Setting up a build and test pipeline
 
 ## HTML / CSS related
 * Animations

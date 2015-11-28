@@ -1,3 +1,4 @@
+'use strict';
 // Gulp related
 var gulp = require('gulp');
 var gulpFrontMatter = require('gulp-front-matter');
@@ -9,7 +10,6 @@ var autoprefixer = require('gulp-autoprefixer');
 var runSequence = require('run-sequence');
 var s3 = require('gulp-s3-upload');
 var size = require('gulp-size');
-var moment = require('moment');
 
 // Metalsmith related
 var gulpsmith = require('gulpsmith');
@@ -18,7 +18,6 @@ var layouts = require('metalsmith-layouts');
 var permalinks = require('metalsmith-permalinks');
 var collections = require('metalsmith-collections');
 var feed = require('metalsmith-feed');
-var fs = require('fs');
 
 // Gulp tasks
 gulp.task('default', function(cb) {
@@ -64,16 +63,18 @@ gulp.task('metalsmith', function() {
                     pattern: 'posts/*.md',
                     sortBy: 'pubDate',
                     reverse: true,
-                  }
+                  },
                 }))
                 .use(markdown())
                 .use(permalinks(':collection/:link'))
                 .use(layouts({engine: 'react', directory: 'templates'}))
-                .metadata({site:{
-                  title: 'Mikevalstar.com Blog',
-                  url: 'http://mikevalstar.com/',
-                  webMaster: 'Mike Valstar',
-                }})
+                .metadata({
+                  site: {
+                    title: 'Mikevalstar.com Blog',
+                    url: 'http://mikevalstar.com/',
+                    webMaster: 'Mike Valstar',
+                  },
+                })
                 .use(feed({collection: 'post'}))
         )
         .pipe(size())
