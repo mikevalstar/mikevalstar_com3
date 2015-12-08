@@ -1,3 +1,6 @@
+
+'use strict';
+
 var React = require('react');
 var Moment = require('moment');
 
@@ -26,6 +29,11 @@ var Post = React.createClass({
                     <time pubdate dateTime={this.props.pubDate}>{formattedDate}</time>
                 </p>
                 </section>
+
+                <div id='disqus_thread'></div>
+                <script dangerouslySetInnerHTML={{ __html: 'var disqus_config = function () { this.page.identifier = "' + this.props.link + '" }' }} />
+                <script src="/disqus.js"></script>
+
               </article>
             </div>
           </div>
@@ -33,7 +41,8 @@ var Post = React.createClass({
       </Layout>
     );
 
-  }
+  },
+
 });
 
 module.exports = Post;
