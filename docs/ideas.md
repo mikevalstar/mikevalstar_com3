@@ -7,6 +7,7 @@
 * Ramifications, understanding your site model
 * Salesforce and Enterprise apps
 * Setting up a build and test pipeline
+* Have your build do everything
 
 ## HTML / CSS related
 * Animations
