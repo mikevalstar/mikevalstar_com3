@@ -8,6 +8,7 @@
 * Salesforce and Enterprise apps
 * Setting up a build and test pipeline
 * Have your build do everything
+* Automatic bug reporting and advanced bug reporting toolbar
 
 ## HTML / CSS related
 * Animations

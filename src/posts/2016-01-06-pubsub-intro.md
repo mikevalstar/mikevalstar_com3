@@ -3,13 +3,13 @@ title: Introduction to Pub/Sub model
 link: simple-pubsub-intro
 layout: post.jsx
 series:
-pubDate: 2016-01-05 14:15:00
-updated: 2016-01-05 14:15:00
+pubDate: 2016-01-06 14:15:00
+updated: 2016-01-06 14:15:00
 author:
     name: Mike Valstar
     email: mikevalstar@gmail.com
 excerpt: >
-    <p></p>
+    <p>With the rise of event driven websites recently (most notably React based websites), the Pub/Sub model has gained popularity in the Javascript world for use on the frontend. In this article I describe what the Pub/Sub model is, when to use it and how to build your own Pub/Sub object from scratch.</p>
 meta:
     twitterhandle: "@mikevalstar"
     description: Introduction to Pub/Sub model for Javascript
@@ -18,11 +18,9 @@ meta:
 With the rise of event driven websites recently (most notably React based websites), the Pub/Sub model has gained popularity in the Javascript world for use on the frontend. In this article I describe what the Pub/Sub model is, when to use it and how to build your own Pub/Sub object from scratch.
 
 ## What is Pub/Sub?
-The [Publish / Subscribe model](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) is actually quite old but has only recently become popular with Javascript applications. This model can both apply to remote and local events, but for the purposes of this tutorial we will be focusing on local events.
+The [Publish / Subscribe model](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) is actually quite old but has only recently become popular with Javascript applications. This model can both apply to remote and local events, but for the purposes of this article we will be focusing on local events in the browser.
 
-The primary purpose of this model is to provide a way of both triggering and listening for global or semi-global events.
-
-There are many libraries that do this: [PubSubJS](https://github.com/mroderick/PubSubJS), jQuery has it built in.
+The primary purpose of this model is to provide a way of both triggering and listening for global or semi-global events. There are many libraries that do this: [PubSubJS](https://github.com/mroderick/PubSubJS), jQuery has it built in, There are [basic examples](https://davidwalsh.name/pubsub-javascript) on the web, etc. These are all good, but it's important to understand whats happening to the the most out of your events.
 
 ## When and why should I use it?
 
@@ -32,10 +30,11 @@ The best use of the this model is when you have multiple areas of your applicati
 * An request error has happened (show an error on the page)
 * User has clicked the window (for popup hiding)
 * User has or will log in / log out (for cleanup)
+* Most window level events
 
 ## When not to use it?
 
-This model is not the greatest when you want to have consequences for actions (you should use Promises or callbacks) or when you need to guarantee delivery / receipt of a message (you will need a more complex event manager). For example:
+This model is not the best choice when you want to have consequences for actions (you should use Promises or callbacks) or when you need to guarantee delivery / receipt of a message (you will need a more complex event manager). For example:
 
 * When you need feedback on the operation (AJAX request &#8594; display data on screen)
 * When operations need to chain (e.g. A &#8594; B &#8594; C)
@@ -68,8 +67,12 @@ In this case it would be helpful to have an event `action.save` so that we can d
 
 With this we can use commas or dots to publish to multiple subscribers.
 
-## Other uses
+## Advanced uses
+Any advanced implementation of a this type of model becomes project specific, you can very easily add in things like automatic logging, automatic error reporting and even adding things like one time events or limited use events, but these always end up being project specific.
 
+## Gotchas
+
+When using this model the primary thing to work watch out for is not cleaning up events `e.unsubscribe()`. Your events will live in this events object forever and do not automatically get cleaned up.  In the case of React every time the object is created it'll add an event to the object, and if you don't remove it you'll end up holding the entire react object in memory for the duration of the app; this can be __very__ bad for memory usage.
 
 ## References
 * https://davidwalsh.name/pubsub-javascript
