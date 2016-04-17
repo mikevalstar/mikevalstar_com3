@@ -1,13 +1,24 @@
 {
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
   },
   "plugins": [
-    "react"
+    "react",
   ],
   "ecmaFeatures": {
-    "jsx": true
+    "jsx": true,
+    "arrowFunctions": true,
+    "blockBindings": true,
+    "classes": true,
+    "destructuring": true,
+    "forOf": true,
+    "templateStrings": true,
+    "restParams": true,
+    "spread": true,
+    "objectLiteralShorthandMethods": true,
+    "objectLiteralShorthandProperties": true,
+    "objectLiteralComputedProperties": true,
   },
   "rules": {
     "block-scoped-var": 2,
@@ -39,11 +50,9 @@
     "use-isnan": 2,
     "valid-typeof": 2,
 
-    "complexity": [1, 5],
     "default-case": 1,
     "global-require": 1,
     "no-debugger": 1,
-    "no-extend-native": 1,
     "no-extra-boolean-cast": 1,
     "no-extra-semi": 1,
     "no-regex-spaces": 1,

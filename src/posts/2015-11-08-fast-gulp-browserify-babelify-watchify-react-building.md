@@ -4,7 +4,7 @@ link: fast-gulp-browserify-babelify-watchify-react-build
 layout: post.jsx
 series:
 pubDate: 2015-11-08 14:15:00
-updated: 2015-11-08 14:15:00
+updated: 2016-06-09 14:15:00
 author:
     name: Mike Valstar
     email: mikevalstar@gmail.com
@@ -17,15 +17,17 @@ meta:
 
 In the last few months quite a few changes have happened to Browserify, Babelify, and React; most of the existing build processes I've seen on the net have stopped working, and the ones that do are poorly explained. Here is my take on a full react build process. With this setup the initial build takes 4.2s on my system and any source updates happen in under 400ms.
 
+<div class="alert alert-info" role="alert"> <strong><time datetime="2016-06-09T14:15:00">April 9 2017</time></strong> Updated to React 15.0, and latest babel presets. </div>
+
 ## Tested With
 * **babelify - 7.2.0** with babel-preset-es2015 & babel-preset-react
-* **browserify - 12.0.1**
-* **gulp - 3.9.0**
+* **browserify - 13.0.0**
+* **gulp - 3.9.1**
 * **gulp-sourcemaps - 1.6.0**
-* **react - 0.14.2** with react-dom
+* **react - 15.0.1** with react-dom
 * **vinyl-buffer - 1.0.0**
 * **vinyl-source-stream - 1.1.0**
-* **watchify - 3.6.0**
+* **watchify - 3.7.0**
 
 ## Quick Version:
 

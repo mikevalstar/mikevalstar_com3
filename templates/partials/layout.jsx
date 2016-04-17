@@ -96,6 +96,10 @@ var Layout = React.createClass({
                   </div>
                   <div className="col-xs-12 col-sm-6">
                       <div className="pull-right">
+                        <a href="/">Blog</a>
+                        <span> - </span>
+                        <a href="/page/projects/">Projects</a>
+                        <span> - </span>
                         <a href="/page/about/">About</a>
                       </div>
                   </div>
