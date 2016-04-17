@@ -3,8 +3,8 @@ title: Caching with javascript
 link: caching-with-javascript
 layout: post.jsx
 series:
-pubDate: 2016-06-09 14:15:00
-updated: 2016-06-09 14:15:00
+pubDate: 2016-06-17 14:15:00
+updated: 2016-06-17 14:15:00
 author:
     name: Mike Valstar
     email: mikevalstar@gmail.com
